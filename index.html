@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sport App — персональный план за 60 секунд</title>
+  <meta name="description" content="Ответь на 25 вопросов и получи персональный план тренировок. Под мобильные и браузер, без лишнего." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- System fonts by default; Google fonts not required. -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg__blob b1"></div>
+    <div class="bg__blob b2"></div>
+    <div class="bg__grid"></div>
+  </div>
+
+  <main class="app" id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true">
+          <span class="logoPulse"></span>
+          <span class="logoBolt">⚡</span>
+        </div>
+        <div class="brand__text">
+          <div class="brand__name">SportPlan</div>
+          <div class="brand__tag">Квиз → план → приложение</div>
+        </div>
+      </div>
+
+      <button class="iconBtn" id="restartBtn" title="Начать заново" aria-label="Начать заново">
+        ↻
+      </button>
+    </header>
+
+    <section class="card" role="region" aria-label="Квиз">
+      <div class="card__top">
+        <button class="backBtn" id="backBtn" aria-label="Назад">
+          ←
+        </button>
+
+        <div class="progressWrap">
+          <div class="progressMeta">
+            <span id="stepLabel">Шаг 1 / 25</span>
+            <span class="pill" id="moodPill">⚡ Быстро</span>
+          </div>
+          <div class="progress" aria-label="Прогресс">
+            <div class="progress__bar" id="progressBar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card__body">
+        <div class="qIcon" id="qIcon" aria-hidden="true"></div>
+        <h1 class="qTitle" id="qTitle">—</h1>
+        <p class="qSub" id="qSub">—</p>
+
+        <div class="options" id="options" role="list"></div>
+
+        <div class="actions">
+          <button class="ghostBtn" id="hintBtn" type="button">Зачем это?</button>
+          <button class="primaryBtn" id="nextBtn" type="button" disabled>Дальше</button>
+        </div>
+
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footLeft">
+        <span class="dot ok"></span>
+        <span class="footText" id="footText">Данные сохраняются локально (можно обновить страницу).</span>
+      </div>
+      <a class="footLink" id="privacyLink" href="#" onclick="return false;">Политика</a>
+    </footer>
+  </main>
+
+  <!-- Thinking / Processing overlay -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="overlayCard" role="status" aria-live="polite">
+      <div class="overlayTop">
+        <div class="overlayIcon" id="overlayIcon" aria-hidden="true"></div>
+        <div class="overlayTitle" id="overlayTitle">Собираем план…</div>
+      </div>
+
+      <div class="overlayVisual" id="overlayVisual" aria-hidden="true"></div>
+      <div class="overlayHint" id="overlayHint">Это займёт несколько секунд</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-label="Подсказка">
+      <div class="modal__title" id="modalTitle">Подсказка</div>
+      <div class="modal__text" id="modalText">—</div>
+      <button class="primaryBtn modal__btn" id="modalClose">Ок</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
