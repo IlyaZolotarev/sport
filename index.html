@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <title>Smart Fitness — Квиз на 25 шагов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <main class="shell">
+    <div class="wrap">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <b>Smart Fitness</b><br/>
+            <span class="kicker" style="font-size:12px;opacity:.9">Персональный план за 60 секунд</span>
+          </div>
+        </div>
+        <div class="pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M12 22s8-4.5 8-12a8 8 0 1 0-16 0c0 7.5 8 12 8 12Z" stroke="rgba(255,255,255,.78)" stroke-width="1.7"/>
+            <path d="M12 12v-5" stroke="rgba(255,255,255,.78)" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M12 12l3 2" stroke="rgba(255,255,255,.78)" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+          <span>~ 1 минута</span>
+        </div>
+      </header>
+
+      <section class="stage">
+        <!-- MAIN -->
+        <div class="card">
+          <div class="confetti" id="confetti" aria-hidden="true"></div>
+          <div class="main">
+            <div class="progressWrap">
+              <div class="progress" aria-label="Прогресс"><i id="progFill"></i></div>
+              <div class="dots" id="dots" aria-hidden="true"></div>
+            </div>
+
+            <div class="stepTitle">
+              <div>
+                <div class="kicker" id="kicker">Шаг 1</div>
+                <h1 id="title">...</h1>
+              </div>
+              <div class="tag" id="tag">План без воды</div>
+            </div>
+
+            <p class="sub" id="sub">...</p>
+
+            <div id="opts" class="options" aria-live="polite"></div>
+
+            <div class="actions">
+              <button class="btn secondary" id="backBtn" type="button">← Назад</button>
+              <button class="btn primary" id="nextBtn" type="button">Далее →</button>
+            </div>
+
+            <div class="hintRow">
+              <div class="hint" id="hint">Выбор сохранён автоматически.</div>
+              <div class="tag">Mobile‑first</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDE -->
+        <aside class="card">
+          <div class="side">
+            <div class="hero">
+              <img id="heroImg" alt="Иллюстрация" src="./assets/illu-dumbbell.svg" />
+              <div class="overlay" aria-hidden="true"></div>
+              <div class="badge">
+                <div style="display:grid;gap:2px">
+                  <div id="badgeTitle">Smart Fitness</div>
+                  <small id="badgeSub">Квиз • 1/25</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="miniCard">
+              <h3 id="sideTitle">План под тебя</h3>
+              <p id="sideText">Мы собираем реалистичный режим, чтобы ты не слился на 5‑й день.</p>
+              <div class="statRow">
+                <div class="stat"><b id="stat1">58%</b><small>сила</small></div>
+                <div class="stat"><b id="stat2">71%</b><small>выносливость</small></div>
+                <div class="stat"><b id="stat3">64%</b><small>восст.</small></div>
+              </div>
+            </div>
+
+            <div class="miniCard">
+              <h3>Почему это работает</h3>
+              <p>Короткие циклы, постепенная прогрессия, контроль нагрузки и встроенная мотивация.</p>
+              <div class="hintRow" style="margin-top:10px">
+                <div class="hint">Можно добавить ссылку на стор и аналитику.</div>
+                <div class="tag">UX</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <footer style="padding:14px 8px 0; color:rgba(255,255,255,.55); font-size:12px">
+        © Smart Fitness • Демонстрационный лендинг‑квиз (index.html + assets). Можно кастомизировать под твой бренд.
+      </footer>
+    </div>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
